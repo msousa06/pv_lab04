@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sado Regional</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        .navbar-fixed-left {
+            position: fixed; /* fixar o navegador */
+            border-radius: 0;
+            height: 100%; /* ocupar todo o tamanho na vertical*/
+        }
+
+        .container {
+            padding-left: 220px; /*faz o render a 220px da esquerda*/
+        }
+    </style>
+</head>
+<body>
+    <nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-left"
+         role="navigation">
+
+        <div class="container-fluid">
+            <div class="navbar-header ">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" datatarget=".navbar-collapse">
+                    <!-- num smartphone, esconde opções do menu-->
+                    <span class="sr-only">Toggle navigation</span> <!--for screen readers-->
+                    <span class="icon-bar"></span> <!--para criar o symbolo “≡” dentro do botão-->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                -<a class="navbar-brand collapse navbar-collapse" href="#">Sado Regional</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul>
+                    <li class="active"><a href="#" target="_blank">Home</a></li>
+                    <li><a href="#" target="_blank">Listar produtos</a></li>
+                    <li><a href="#" target="_blank">Contactos</a></li>
+                </ul>
+            </div>
+        </div> 
+
+        <!-- colocar aqui as tags <div class="navbar-header "> e
+        <div class="navbar-collapse collapse"> conforme descrito abaixo -->
+    </nav>
+
+    <div class="container body-content container-fluid">
+        <!--as vistas parciais vão ser geradas (renderized) aqui-->
+        @RenderBody()
+        <hr />
+        <footer>
+            <!-- &copy é substituído pelo símbolo copyright-->
+            <p>&copy; @DateTime.Now.Year – Sado Regional Online</p>
+        </footer>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
